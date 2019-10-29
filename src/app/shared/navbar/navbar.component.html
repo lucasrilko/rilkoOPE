@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<nav class="navbar navbar-dark bg-dark d-flex justify-content-between">
+    <div>
+        <a class="rounded float-left" [routerLink]="['/home']"><i class="fas fa-home"></i></a>
+    </div>
+    <div>
+        <a *ngIf="permission == 'FULL'" [routerLink]="['/produtos']">Produto</a>
+    </div>
+    <div>
+        <a *ngIf="permission == 'FULL'" [routerLink]="['/users']"><i class="fas fa-user"></i></a>
+    </div>
+    <div>
+        <i class="fas fa-user"></i>
+        <a style="font-size: 14px;">Bem vindo, {{nome}} ! <small style="">({{cargo}})</small></a>
+        <a [routerLink]="['/login']"><i class="fas fa-sign-out-alt"></i></a>
+    </div>
+</nav>

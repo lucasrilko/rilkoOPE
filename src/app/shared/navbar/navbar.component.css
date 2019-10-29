@@ -1,0 +1,16 @@
+.navbar {
+    padding: 0;
+}
+
+.navbar a,
+.navbar i {
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+.navbar a:hover,
+.navbar a:hover i {
+    transition: background-color 0.5s ease;
+    background-color: white;
+    color: #343a40;
+}

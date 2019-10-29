@@ -1,0 +1,12 @@
+.title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hover :hover {
+    background-color: black;
+}
+
+.footer {
+    background-color: #6c757d;
+}

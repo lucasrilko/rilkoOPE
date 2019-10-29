@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+
+<div style="margin-top:3%;padding:30px;" class="card container">
+
+    <form [formGroup]="formNew" action="POST">
+
+        <div style="padding: 20px" class="container card">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="nome">Nome:</label>
+                    <input class="form-control" formControlName="nome_Funcionario" type="text">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Email:</label>
+                    <input class="form-control" formControlName="email_Funcionario" type="text">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Telefone:</label>
+                    <input class="form-control" formControlName="telefone_Funcionario" type="text">
+
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="nome">Cargo:</label>
+                    <select class="form-control" name="Cargo" id="Cargo">
+                        <option *ngFor="let cargo of cargos" value="">{{cargo.cargo_Funcionario}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Usuario:</label>
+                    <input class="form-control" formControlName="usuario" type="text">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Senha:</label>
+                    <input class="form-control" formControlName="senha" type="password">
+                </div>
+                <input [disabled]="formNew.invalid" (click)="postLogin()" style="margin: 20px;" class="btn btn-secondary btn-sm btn-block" type="submit">
+            </div>
+        </div>
+        <table class="table table-bordered" style="margin-top: 30px">
+            <thead>
+                <tr>
+                    <td scope="col">Nome</td>
+                    <td scope="col">Email</td>
+                    <td scope="col">Telefone</td>
+                    <td scope="col">Cargo</td>
+                    <td scope="col">Usuário</td>
+                    <td scope="col">Senha</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of logins">
+                    <td> {{item.nome_Funcionario}} </td>
+                    <td> {{item.email_Funcionario}} </td>
+                    <td> {{item.telefone_Funcionario}} </td>
+                    <td> {{item.cargo_Funcionario}} </td>
+                    <td> {{item.usuario}} </td>
+                    <td> {{item.senha}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<footer>
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="https://www.impacta.edu.br/"> Mente Blindada Desenvolvimento!</a>
+    </div>
+</footer>
